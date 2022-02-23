@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class DBUserDetailsServiceImpl implements UserDetailsService {
+public class RDBUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     AppUserRepository appUserRepository;
