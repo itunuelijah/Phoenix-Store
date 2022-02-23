@@ -21,6 +21,7 @@ public class Cart {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Item> itemList;
 
+    //    @Transient  // transient is used to say it should not be added to the database
     private Double totalPrice;
 
     public void addItem(Item item){
