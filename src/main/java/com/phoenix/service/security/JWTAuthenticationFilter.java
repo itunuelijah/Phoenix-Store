@@ -1,4 +1,6 @@
 package com.phoenix.service.security;
 
-public class JWTAuthenticationFilter {
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 }
