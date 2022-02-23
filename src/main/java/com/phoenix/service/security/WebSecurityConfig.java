@@ -1,27 +1,24 @@
 package com.phoenix.service.security;
 
-
-import org.hibernate.Session;
-import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
+@EnableWebSecurity
+public class WebSecurityConfig extends
+        WebSecurityConfigurerAdapter {
 
-public class WebSecurityConfig extends WebSecurityConfigurer {
-     WebSecurityConfigurerAdapter{
-
-     }
     @Override
-    public void configure(HttpSecurity http) throws Exception {
-        throws  Exception {
+    protected void configure(HttpSecurity http)
+            throws Exception {
 
-            http.csrf().disable()
-                    .authorizeRequests()
-                    .anyRequest()
-                    .authenticated()
-                    .and()
-                    .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.csrf().disable()
+                .authorizeRequests()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 }
