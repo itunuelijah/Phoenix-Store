@@ -41,7 +41,6 @@ class ProductRestControllerTest {
 
     ObjectMapper objectMapper;
 
-
     @BeforeEach
     void setUp() {
         objectMapper = new ObjectMapper();
