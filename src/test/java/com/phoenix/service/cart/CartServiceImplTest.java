@@ -98,12 +98,12 @@ class CartServiceImplTest {
 
        assertThat(cartRequestDto.getQuantity()).isEqualTo(1);
 
-        CartResponseDto cartResponseDto = null;
+       CartResponseDto cartResponseDto = null;
 
        cartResponseDto = cartService.addItemToCart(cartRequestDto);
 
        assertThat(cartResponseDto.getCartItems()).isNotNull();
-       assertThat(cartResponseDto.getCartItems().size()).isEqualTo(1);
+       assertThat(cartResponseDto.getCartItems().size()).isEqualTo(2);
 
        Item item = cartResponseDto.getCartItems().get(0);
        log.info("Item --> {}", item);
@@ -120,7 +120,7 @@ class CartServiceImplTest {
 
         CartResponseDto cartResponseDto = cartService.addItemToCart(cartRequestDto);
         assertThat(cartResponseDto.getCartItems()).isNotNull();
-        assertThat(cartResponseDto.getCartItems().size()).isEqualTo(1);
+        assertThat(cartResponseDto.getCartItems().size()).isEqualTo(2);
         assertThat(cartResponseDto.getTotalPrice()).isEqualTo(1000);
 
     }
@@ -145,6 +145,58 @@ class CartServiceImplTest {
         assertThat(responseDto.getCartItems().get(0)
                 .getQuantityAddedToCart()).isEqualTo(3);
     }
+
+
+
+//    @Test
+//    @DisplayName("Increase cart item quantity test")
+//    void updateCartItemTest() {
+//        CartUpdateDto updateDto =
+//                CartUpdateDto.builder()
+//                        .itemId(511L)
+//                        .quantityOperation(QuantityOperation.INCREASE)
+//                        .userId(5011L).build();
+//
+//        AppUser appUser = appUserRepository.findById(updateDto.getUserId()).orElse(null);
+//        assertThat(appUser).isNotNull();
+//        Cart userCart = appUser.getMyCart();
+//        Item item = null;
+////        get the item
+//
+//        Predicate<Item> itemPredicate = i --> i.getId().equals(updateDto.getItemId());
+//        userCart.getItemList().stream().filter(itemPredicate);
+//
+//        Optional<Item> optionalItem =
+//                userCart.getItemList().stream()
+//                        .filter(itemPredicate).findFirst();
+//
+//        item = optionalItem.get();
+//
+////        for (int i = 0; i < userCart.getItemList().size(); i++) {
+////            item = userCart.getItemList().get(i);
+////
+////            if (userCart.getItemList().get(i).getId() == updateDto.getItemId()) {
+////                break;
+////            }
+////        }
+//        assertThat(item).isNotNull();
+//        assertThat(item.getQuantityAddedToCart()).isEqualTo(3);
+//        log.info("Cart update onj --> {}", updateDto);
+//
+//        CartUpdateDto responseDto = cartService.updateCartItem(updateDto);
+//
+////    get the item
+//        for (int i = 0; i < responseDto.getCartItems().size(); i++) {
+//            item = responseDto.getCartItems().get(i);
+//
+//            if (item.getId() == updateDto.getItemId()) {
+//                break;
+//            }
+//        }
+//        assertThat(item).isNotNull();
+//        assertThat(item.getQuantityAddedToCart()).isEqualTo(4);
+//    }
+
 
 
 }

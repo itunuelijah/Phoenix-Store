@@ -21,4 +21,13 @@ public class CloudinaryServiceImpl implements CloudService {
     public Map<?, ?> upload(byte[] bytes, Map<?, ?> params) throws IOException {
         return cloudinary.uploader().upload(bytes, params);
     }
+
+//    @Override
+//    public Map<?, ?> upload(File file, Map<?, ?> params) throws IOException {
+//        return cloudinary.uploader().upload(Files.readAllBytes(file.toPath()),  params);
+//    }
+//    @Override
+//    public Map<?, ?> upload(MultipartFile multipart, Map<?, ?> params) throws IOException {
+//        return cloudinary.uploader().upload(multipart.getBytes(),  params);
+
 }

@@ -80,8 +80,5 @@ class CartRepositoryTest {
 
         assertThat(savedCart.getItemList().get(0).getQuantityAddedToCart()).isEqualTo(5);
 
-
-
-
     }
 }

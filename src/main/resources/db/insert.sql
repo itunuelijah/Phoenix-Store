@@ -1,6 +1,6 @@
-set foreign_key_checks = 0;
+set foreign_key_checks = 0; -- not for postgres
 
-truncate table product;
+truncate table product; ----  truncate table product cascade ; for postgres db
 truncate table item;
 truncate table cart;
 truncate table cart_item_list;
@@ -26,10 +26,8 @@ values(345, 0.0),
 
 insert into app_user(id, firstname, lastname, email, my_cart_id)
 values(5005, 'John', 'Badmus', 'john@myspace.com', 345),
-(5010, 'Chris', 'Tuck', 'chris@myspace.com',355),
-(5011, 'GoodNews', 'Confidence', 'goodconfidence@myspace.com', 366);
-(5012, 'GoodNews', 'Confidence', 'goodconfidence@myspace.com', 377);
-
+      (5010, 'Chris', 'Tuck', 'chris@myspace.com',355),
+      (5011, 'GoodNews', 'Confidence', 'goodconfidence@myspace.com', 366);
 
 
 insert into cart_item_list(cart_id, item_list_id)
