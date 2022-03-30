@@ -20,10 +20,18 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne()
+    @OneToOne(fetch = FetchType.EAGER)
     private Product product;
 
     private Integer quantityAddedToCart;
+
+
+    public Item(Product product, Integer quantityAddedToCart){
+        if (quantityAddedToCart <= product.getQuantity()){
+            this.quantityAddedToCart = quantityAddedToCart;
+        }
+        this.product = product;
+    }
 
     public void setQuantityAddedToCart(Integer quantityAddedToCart) {
         if(product.getQuantity() >= quantityAddedToCart)
