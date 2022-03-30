@@ -15,8 +15,12 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    @OneToMany
+    private List<Product> products;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Item> itemList;
