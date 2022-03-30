@@ -1,4 +1,4 @@
-package com.phoenix.service.security;
+package com.phoenix.security;
 
 import com.phoenix.data.models.AppUser;
 import com.phoenix.data.models.Authority;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class RDBUserDetailsServiceImpl implements UserDetailsService {
+public class CustomerUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     AppUserRepository appUserRepository;
