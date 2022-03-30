@@ -61,7 +61,7 @@ class ProductRepositoryTest {
     }
 
     @Test
-    @DisplayName("Find all product in the database")
+    @DisplayName("Find all products in the database")
     void findAllProductsTest(){
         List<Product> productList = productRepository.findAll();
         assertThat(productList).isNotNull();
@@ -73,7 +73,7 @@ class ProductRepositoryTest {
     void findProductByNameTest(){
         Product product = productRepository.findByName("Luxury Mop").orElse(null);
         assertThat(product).isNotNull();
-        assertThat(product.getId()).isEqualTo(12);
+        assertThat(product.getId()).isEqualTo(12L);
         assertThat(product.getName()).isEqualTo("Luxury Mop");
         assertThat(product.getPrice()).isEqualTo(2340);
         assertThat(product.getQuantity()).isEqualTo(3);
