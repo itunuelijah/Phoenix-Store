@@ -1,4 +1,4 @@
-package com.phoenix.data.dto;
+package com.phoenix.data.models;
 
 public enum QuantityOperation {
 
