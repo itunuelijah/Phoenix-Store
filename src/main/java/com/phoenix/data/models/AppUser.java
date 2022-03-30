@@ -15,9 +15,11 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String firstname;
+    @Column(name = "first_name")
+    private String firstName;
 
-    private String lastname;
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column(unique = true, nullable = false)// added for spring security(nullable = false)
     private String email;
