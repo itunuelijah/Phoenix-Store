@@ -1,5 +1,6 @@
 package com.phoenix.data.dto;
 
+import com.phoenix.data.models.QuantityOperation;
 import lombok.Builder;
 import lombok.Data;
 
