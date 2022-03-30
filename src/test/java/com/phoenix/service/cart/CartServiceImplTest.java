@@ -3,15 +3,12 @@ package com.phoenix.service.cart;
 import com.phoenix.data.dto.CartRequestDto;
 import com.phoenix.data.dto.CartResponseDto;
 import com.phoenix.data.dto.CartUpdateDto;
-import com.phoenix.data.dto.QuantityOperation;
+import com.phoenix.data.models.QuantityOperation;
 import com.phoenix.data.models.AppUser;
 import com.phoenix.data.models.Cart;
 import com.phoenix.data.models.Item;
-import com.phoenix.data.models.Product;
 import com.phoenix.data.repository.AppUserRepository;
-import com.phoenix.data.repository.CartRepository;
 import com.phoenix.data.repository.ProductRepository;
-import com.phoenix.service.config.CartServiceTestConfiguration;
 import com.phoenix.web.exceptions.BusinessLogicException;
 import com.phoenix.web.exceptions.ProductDoesNotExistException;
 import com.phoenix.web.exceptions.UserNotFoundException;
@@ -19,22 +16,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Profile;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 
-import java.util.Optional;
-import java.util.function.Predicate;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
 
 
 @SpringBootTest
