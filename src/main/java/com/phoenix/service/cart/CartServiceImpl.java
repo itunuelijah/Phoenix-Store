@@ -1,10 +1,9 @@
 package com.phoenix.service.cart;
 
-import com.github.fge.jsonpatch.JsonPatch;
 import com.phoenix.data.dto.CartRequestDto;
 import com.phoenix.data.dto.CartResponseDto;
 import com.phoenix.data.dto.CartUpdateDto;
-import com.phoenix.data.dto.QuantityOperation;
+import com.phoenix.data.models.QuantityOperation;
 import com.phoenix.data.models.AppUser;
 import com.phoenix.data.models.Cart;
 import com.phoenix.data.models.Item;
@@ -19,7 +18,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
