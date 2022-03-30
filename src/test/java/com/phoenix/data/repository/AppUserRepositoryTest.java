@@ -29,8 +29,8 @@ class AppUserRepositoryTest {
     void whenNewUserIsCreated_thenCreateCartTest(){
         //creating a user object
         AppUser appUser = new AppUser();
-        appUser.setFirstname("John");
-        appUser.setLastname("Badmus");
+        appUser.setFirstName("John");
+        appUser.setLastName("Badmus");
         appUser.setAddress("123 peace road");
         appUser.setEmail("john@yupmail.com");
         //save user
