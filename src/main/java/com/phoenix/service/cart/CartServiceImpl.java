@@ -137,6 +137,4 @@ public class CartServiceImpl implements CartService {
         Predicate<Item> itemPredicate = i -> i.getId().equals(itemId);
         return cart.getItemList().stream().filter(itemPredicate).findFirst();
     }
-
-
 }

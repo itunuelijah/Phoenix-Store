@@ -23,13 +23,8 @@ public class AppUserController {
     @PostMapping()
     public ResponseEntity<?>register(@RequestBody AppUserDto appUserDto){
 
-        try{
-            AppUserResponseDto responseDto = appUserService.register(appUserDto);
-            return ResponseEntity.ok().body(responseDto);
-        }
-        catch (BusinessLogicException e){
-            return ResponseEntity.badRequest().body(e);
-        }
+        AppUserResponseDto responseDto = appUserService.register(appUserDto);
+        return ResponseEntity.ok().body(responseDto);
     }
 
 }

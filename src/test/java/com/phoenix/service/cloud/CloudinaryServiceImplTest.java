@@ -73,7 +73,4 @@ class CloudinaryServiceImplTest {
         assertThat(uploadResult.get("url")).isNotNull();
     }
 
-
-
-
 }

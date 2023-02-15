@@ -96,6 +96,7 @@ public class ProductServiceImpl implements ProductService{
        return productRepository.save(product);
     }
 
+
     @Override
     public Product updateProductDetails(Long productId, JsonPatch productPatch) throws BusinessLogicException {
         Optional<Product> productQuery = productRepository.findById(productId);
@@ -112,8 +113,11 @@ public class ProductServiceImpl implements ProductService{
             throw new BusinessLogicException("Update Failed");
         }
 
-
     }
+
+
+
+
 
     private Product applyPatchToProduct(JsonPatch productPatch, Product targetProduct) throws JsonPatchException, JsonProcessingException {
 
@@ -124,3 +128,7 @@ public class ProductServiceImpl implements ProductService{
         return objectMapper.treeToValue(patched, Product.class);
     }
 }
+
+
+
+

@@ -30,8 +30,8 @@ public class AppUser {
     private boolean enabled;
 
     @ElementCollection  //we use this to say the relationship because Authority is not an entity but similar to one to many relationship.
-    //normally join collumn will be created to manage 1 to many relationship.
-    //with the @ElementCollection, you can save a spring, enum or any other elemtn that is not an entity,.
+    //normally join column will be created to manage 1 to many relationship.
+    //with the @ElementCollection, you can save a spring, enum or any other element that is not an entity,.
     private List<Authority> authorities;// you can be student then or instructor or admin. thats why it is in list.
 
     //.......

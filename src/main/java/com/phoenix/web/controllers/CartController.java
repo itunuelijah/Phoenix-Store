@@ -23,8 +23,7 @@ public class CartController {
     public ResponseEntity<?> addItemToCart(@RequestBody CartRequestDto cartRequestDto){
         CartResponseDto cartResponseDto = null;
         try{
-            cartResponseDto =
-                    cartServiceImpl.addItemToCart(cartRequestDto);
+            cartResponseDto = cartServiceImpl.addItemToCart(cartRequestDto);
         } catch (ProductDoesNotExistException | UserNotFoundException
                 | BusinessLogicException e) {
            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
